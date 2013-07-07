@@ -1,0 +1,17 @@
+seo
+
+elimina corso e utente
+formattazione date
+classe body/main a seconda della view
+xml
+
+PRIMA DI PUBBLICARE:
+- rimuovere route di test
+- compilare less
+
+validazione html e css
+visualizzare dimensione files
+avvisi email
+controllare TODO codice
+(interfaccia con costanti per confronto items)
+eliminare view annunci_tutti_i_corsi

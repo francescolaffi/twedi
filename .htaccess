@@ -1,0 +1,25 @@
+Options -Indexes
+
+# protect the htaccess file
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+### REWRITING ###
+RewriteEngine On
+RewriteBase /twedi/
+
+#skip rewrite rules for static folder, favicon and enter point
+RewriteCond %{REQUEST_URI} ^/twedi/public/ [OR]
+RewriteCond %{REQUEST_FILENAME} favicon.ico [OR]
+RewriteCond %{REQUEST_FILENAME} lib/bootstrap.php$ [OR]
+RewriteCond %{REQUEST_FILENAME} sandbox.php
+RewriteRule . - [L]
+
+#put trailing slash on URI
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule (.*) $1/ [L,R=301]
+
+#rewrite URI as pathinfo
+RewriteRule (.*) lib/bootstrap.php/$1 [L]

@@ -1,0 +1,516 @@
+@rootem: 14; //root em in px
+
+@mainw: 960; //larghezza sito
+
+@headerspacing: 0.65em;
+@h_header: 120;
+@h_topnav: 30;
+
+@live_area_padding: 10; //padding attorno al contenuto principale
+@sidebarw: 290; //larghezza sidebar
+@contentw: 630; //larghezza contenuto
+
+@museo-font: "Museo", "Lucida Bright", Georgia, serif;
+
+/** *** Fonts *** **/
+@font-face {
+	font-family: 'Droid Sans';
+	src: url('../fonts/DroidSans_ITsubset/DroidSans-webfont.eot');
+	src: local('☺'), url('../fonts/DroidSans_ITsubset/DroidSans-webfont.woff') format('woff'), url('../fonts/DroidSans_ITsubset/DroidSans-webfont.ttf') format('truetype'), url('../fonts/DroidSans_ITsubset/DroidSans-webfont.svg#webfontbC7tRKrq') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Droid Sans';
+	src: url('../fonts/DroidSans_ITsubset/DroidSans-Bold-webfont.eot');
+	src: local('☺'), url('../fonts/DroidSans_ITsubset/DroidSans-Bold-webfont.woff') format('woff'), url('../fonts/DroidSans_ITsubset/DroidSans-Bold-webfont.ttf') format('truetype'), url('../fonts/DroidSans_ITsubset/DroidSans-Bold-webfont.svg#webfont5dL3IGk2') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Museo';
+	src: url('../fonts/Museo_WesternSubset/museo300-regular-webfont.eot');
+	src: local('☺'), url('../fonts/Museo_WesternSubset/museo300-regular-webfont.woff') format('woff'), url('../fonts/Museo_WesternSubset/museo300-regular-webfont.ttf') format('truetype'), url('../fonts/Museo_WesternSubset/museo300-regular-webfont.svg#webfont0HkqB1Ox') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Museo';
+	src: url('../fonts/Museo_WesternSubset/museo500-regular-webfont.eot');
+	src: local('☺'), url('../fonts/Museo_WesternSubset/museo500-regular-webfont.woff') format('woff'), url('../fonts/Museo_WesternSubset/museo500-regular-webfont.ttf') format('truetype'), url('../fonts/Museo_WesternSubset/museo500-regular-webfont.svg#webfont9LL7BeAc') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/** *** RESET e BODY *** **/
+
+/* CSS RESET http://meyerweb.com/eric/tools/css/reset/ v1.0 | 20080212 */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: "";}
+/* remember to define focus styles! */:focus {outline: 0;}
+/* remember to highlight inserts somehow! */ins {text-decoration: none;}del {text-decoration: line-through;}
+/* tables still need "cellspacing="0" in the markup */table {border-collapse: collapse;border-spacing: 0;}
+
+body{
+  font-size: @rootem/16em;
+  font-family: "Droid Sans", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+}
+
+/** *** STRUTTURA *** **/
+div#top-wrapper, div#bottom-wrapper {
+  width: 100%;
+}
+
+div#header, ul#top-nav, div#main-wrapper, div#footer {
+  position: relative;
+  width: @mainw /@rootem+0em;
+  margin: 0 auto;
+}
+
+div#header{
+  height: @h_header/@rootem+0em;
+}
+
+ul#top-nav {
+  height: @h_topnav/@rootem+0em;
+  text-transform: uppercase;
+}
+
+div#main-wrapper{
+  clear:both;
+  margin: 0 auto;
+  background: url('../img/sidebar_middle.gif') repeat-y center top;
+  
+    div#main {
+	background: url('../img/sidebar_bottom.gif') no-repeat center bottom;
+      
+	.inner{
+		background: url('../img/sidebar_top.gif') no-repeat center top;
+		padding: 2em @live_area_padding/@rootem+0em;
+		position: relative;
+		overflow: hidden;
+		
+		div#content {
+		  width: @contentw/@rootem+0em;
+		  float: left;
+		}
+		
+		div#sidebar{
+		  width: @sidebarw/@rootem+0em;
+		  float: right;
+		}
+	}
+  }
+}
+
+
+div#bottom-wrapper {
+  clear: both;
+}
+
+
+/** *** STILI GENERICI e CONTENUTO *** **/
+
+h1{font-size:2em;}
+h2{font-size:1.75em;}
+h3{font-size:1.5em;}
+h4{font-size:1.25em;}
+h5{font-size:1em;}
+h6{font-size:0.75em;}
+
+h1,h2,h3,h4,h5,h6{ margin: 1em 0 0.5em 0; }
+h1,h2,h3,h4{ font-family: @museo-font; }
+p{margin-bottom: 0.5em}
+
+a:link { color: #009; }
+a:active{ color: #009; }
+a:visited { color: #666; }
+a:hover { color: #66f; }
+
+.clearfix {
+	clear: both;
+}
+
+/** *** STILI SPECIFICI *** **/
+
+div.colonna {
+  width: 40%;
+  float: left;
+  margin-right: 10%;
+  margin-bottom: 2em;
+}
+
+div#top-wrapper, div#bottom-wrapper {
+  background-color: #015;
+  color: #EEE;
+}
+div#top-wrapper {
+  background: url("../img/sfondo_header.png") top center repeat-x;
+}
+
+div#header{
+  .title {
+    margin: 0;
+    margin-top: @headerspacing;
+    font-size: 32/@rootem+0em;
+    line-height: 1.2;
+  }
+  
+  #site-title {
+	font-family: @museo-font;
+    float: left;
+    letter-spacing: 0.03em;
+    font-weight: normal;
+	margin-left: @headerspacing;
+
+	a {
+		display: block;
+		color: #ffffff;
+		text-decoration: none;
+		background: url("../img/logo.png") center left no-repeat;
+		padding-left: 80/32+0em;
+
+		em{
+		  font-family: Georgia, "Bitstream Charter", serif;
+
+		  &.amp{
+			font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Baskerville, serif;
+		  }
+		}
+	}
+  }
+  
+  #site-subtitle {
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    word-spacing: 0.3em;
+    font-weight: 100;
+    margin-right: @headerspacing;
+    float: right;
+  }
+}
+
+div#top-nav{
+  position: relative;
+  width: 68.57142857142857em;
+  height: 2em;
+  margin: 0 auto;
+}
+
+h1.content-title, h2.content-title {
+	font-size: 1.75em;
+	font-variant: small-caps;
+}
+
+/*ul#breadcrumb{
+  overflow: hidden;
+  width:100%;
+  
+  div, li{
+    float: left;
+    margin-right: 1em;
+  }
+}*/
+
+div#notices p{
+	margin-top: 2em;
+	text-align: center;
+	
+	&.warning {
+		background-color: #FFCC00;
+	}
+	&.success {
+		background-color: #009933;
+	}
+	&.info {
+		background-color: #000099;
+		color: #FFFFFF;
+	}
+	&.error {
+		background-color:#FF0000;
+		color: #000000;
+	}
+}
+
+div.annuncio, div.file {
+	margin-bottom: 2em;
+}
+
+a.link_vedi_annuncio, a.link_vedi_file {
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+div.metainfo {
+	font-weight: bold;
+	margin-top: 1em;
+	border-bottom: 0.1em solid #c0c0c0;
+	font-size: 0.8em;
+}
+
+div.context_info {
+	margin: 2em 1.5em 0 0;
+	float: right;
+}
+
+ul#sidebar_links_utili {
+	list-style-type: circle;
+	margin-left: 1.5em;
+}
+
+div#footer {
+	padding: 0.3em;
+	color: #aac;
+	text-align: center;
+}
+
+div#footer a {
+	color: #ffffff;
+}
+
+div#footer p {
+	margin-bottom: 0em;
+}
+
+/** *** STILI DEI FORM *** **/
+
+label {
+	display: block;
+	float: left;
+	width: 13em;
+	height: 1.5em;
+}
+
+label#login-sidebar_email, label#login-sidebar_password, label#login-sidebar_resta_loggato {
+	width: 7em;
+}
+
+span.required_element_sign {
+	color: #990000;
+}
+
+p.error {
+	color: #FF0000;
+}
+
+div.form_element {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+textarea#inserimento_annuncio_lavoro_contenuto {
+	height: 10em;
+	width: 20em;
+}
+
+input#inserimento_annuncio_lavoro_titolo {
+	width: 20em;
+}
+
+textarea#inserimento_annuncio_globale_contenuto {
+	height: 10em;
+	width: 20em;
+}
+
+input#inserimento_annuncio_globale_titolo {
+	width: 20em;
+}
+
+textarea#inserimento_annuncio_corso_contenuto {
+	height: 10em;
+	width: 20em;
+}
+
+input#inserimento_annuncio_corso_titolo {
+	width: 20em;
+}
+
+label#impostazioni_account_avvisi_corso_label {
+	width: 23em;
+}
+
+label#impostazioni_account_avvisi_lavoro_label {
+	width: 23em;
+}
+
+
+/********************* INIZIO BARRA NAVIGAZIONE ***/
+
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.sf-menu {
+	line-height:	1.0;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			20em; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+	width:			100%;
+}
+.sf-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float:			left;
+	position:		relative;
+}
+.sf-menu a {
+	display:		block;
+	position:		relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left:			0;
+	top:			2em; /* match top ul list item height */
+	z-index:		99;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:			20em; /* match ul width */
+	top:			0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left:			20em; /* match ul width */
+	top:			0;
+}
+
+/*** DEMO SKIN ***/
+.sf-menu {
+	float:			left;
+}
+.sf-menu a {
+	padding: .5em 2em;
+	text-decoration:none;
+}
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color:			#13a;
+}
+.sf-menu a.current  {
+	font-weight: bold;
+}
+.sf-menu li {
+	background:		none;
+}
+.sf-menu li li {
+	background:		#AABDE6;
+}
+.sf-menu li li li {
+	background:		#9AAEDB;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background:		#CFDEFF;
+	outline:		0;
+}
+
+/*** arrows **/
+.sf-menu a.sf-with-ul {
+	padding-right: 	3em;
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position:		absolute;
+	display:		block;
+	right:			1.75em;
+	top:			1.05em; /* IE6 only */
+	width:			10px;
+	height:			10px;
+	text-indent: 	-999em;
+	overflow:		hidden;
+	background:		url('../img/arrows-ffffff.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	top:			.7em;
+	background-position: 0 -100px; /* use translucent arrow for modern browsers*/
+}
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px -100px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator { background-position:  -10px 0; }
+.sf-menu ul a > .sf-sub-indicator { background-position:  0 0; }
+/* apply hovers to modern browsers */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+
+/*** shadows for all but IE6 ***/
+.sf-shadow ul {
+	background:	url('../img/shadow.png') no-repeat bottom right;
+	padding: 0 8px 9px 0;
+	-moz-border-radius-bottomleft: 17px;
+	-moz-border-radius-topright: 17px;
+	-webkit-border-top-right-radius: 17px;
+	-webkit-border-bottom-left-radius: 17px;
+}
+.sf-shadow ul.sf-shadow-off {
+	background: transparent;
+}
+
+/********************* FINE BARRA NAVIGAZIONE ***/
+
+#home_links_corsi ul.sf-menu {
+	border: 1px solid #CCC;
+	width: 95%;
+
+	li {
+		width:100%;
+		text-align: center;
+
+		a .sf-sub-indicator {
+			right:			.8em;
+			top:			.5em;
+			background:	url('../img/nav-arrow-down.png') no-repeat -2px -2px;
+		}
+
+		li {
+			text-align: left;
+		}
+	}
+}
+
+#home_link_registrazione a {
+	display: block;
+	border: 1px solid #CCC;
+	color:	#13a;
+	width: 95%;
+	line-height: 1;
+	padding: .5em 0;
+	text-align: center;
+	text-decoration: none;
+
+	&:focus, &:hover, &:active {
+		background:		#CFDEFF;
+		outline:		0;
+	}
+}
